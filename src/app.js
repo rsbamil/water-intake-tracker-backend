@@ -1,10 +1,15 @@
 import express from "express"
 import cors from "cors"
+
 import dotenv from "dotenv"
 import errorMiddleware from "./middleware/errorMiddleware.js"
+
 import authRoutes from "./routes/authRoutes.js"
+import intakeRoutes from "./routes/intakeRoutes.js"
+
 import protect from "./middleware/authMiddleware.js"
-import authrizeRoles from "./middleware/roleMiddleware.js"
+import authorizeRoles from "./middleware/roleMiddleware.js"
+
 
 dotenv.config()
 const app = express()
@@ -25,7 +30,7 @@ app.get("/api/health",(req,res)=>{
     })
 })
 
-app.get("/api/admin/test",protect,authrizeRoles("admin"),(req,res)=>{
+app.get("/api/admin/test",protect,authorizeRoles("admin"),(req,res)=>{
     res.status(200).json({
         success:true,
         message:"Admin route accessed successfully",
@@ -34,6 +39,7 @@ app.get("/api/admin/test",protect,authrizeRoles("admin"),(req,res)=>{
 })
 
 app.use("/api/auth",authRoutes)
+app.use("/api/intake",intakeRoutes)
 
 app.use(errorMiddleware)
 
