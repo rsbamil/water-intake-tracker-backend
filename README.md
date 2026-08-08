@@ -29,3 +29,10 @@ Backend API for the Water Intake Tracker application.
 ```bash
 git clone https://github.com/rsbamil/water-intake-tracker-backend
 cd water-intake-tracker-backend
+
+## Admin Setup
+
+Run:
+
+```bash
+npm run create-admin
