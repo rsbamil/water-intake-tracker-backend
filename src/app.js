@@ -6,6 +6,7 @@ import errorMiddleware from "./middleware/errorMiddleware.js"
 
 import authRoutes from "./routes/authRoutes.js"
 import intakeRoutes from "./routes/intakeRoutes.js"
+import userRoutes from "./routes/userRoutes.js"
 
 import protect from "./middleware/authMiddleware.js"
 import authorizeRoles from "./middleware/roleMiddleware.js"
@@ -40,6 +41,7 @@ app.get("/api/admin/test",protect,authorizeRoles("admin"),(req,res)=>{
 
 app.use("/api/auth",authRoutes)
 app.use("/api/intake",intakeRoutes)
+app.use("/api/users",userRoutes)
 
 app.use(errorMiddleware)
 

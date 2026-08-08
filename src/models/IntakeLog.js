@@ -10,7 +10,8 @@ const intakeLogSchema = new mongoose.Schema({
     amount:{
         type:Number,
         required:[true,"Water intake amount is required"],
-        min:[1,"Water intake must be greater than 0"]
+        min:[1,"Water intake must be greater than 0"],
+        max:[10000,"Daily goal cannot exceed 10000 ml"]
     },
     consumedAt:{
         type:Date,

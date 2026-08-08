@@ -2,7 +2,7 @@ import express from "express"
 import { createIntake , getTodayIntake , getIntakeHistory,deleteIntake } from "../controllers/intakeController.js"
 import protect from "../middleware/authMiddleware.js"
 import validate from "../middleware/validationMiddleware.js"
-import createIntakeValidator from "../validators/intakeValidtor.js"
+import createIntakeValidator from "../validators/intakeValidator.js"
 
 const router = express.Router()
 
