@@ -73,3 +73,46 @@ npm run create-admin
 {
   "amount": 500
 }
+
+## API Endpoints
+
+### Health
+
+| Method | Endpoint | Auth | Description |
+|---|---|---|---|
+| GET | `/api/health` | No | Check API status |
+
+### Authentication
+
+| Method | Endpoint | Auth | Description |
+|---|---|---|---|
+| POST | `/api/auth/register` | No | Register user |
+| POST | `/api/auth/login` | No | Login |
+| GET | `/api/auth/me` | User/Admin | Get authenticated user |
+
+### User
+
+| Method | Endpoint | Auth | Description |
+|---|---|---|---|
+| GET | `/api/users/me` | User/Admin | Get own profile |
+| PUT | `/api/users/me/goal` | User/Admin | Update own daily goal |
+| DELETE | `/api/users/me` | User | Delete own account |
+
+### Intake
+
+| Method | Endpoint | Auth | Description |
+|---|---|---|---|
+| POST | `/api/intake` | User/Admin | Log water intake |
+| GET | `/api/intake/today` | User/Admin | Get today's intake |
+| GET | `/api/intake/history` | User/Admin | Get intake history |
+| DELETE | `/api/intake/:id` | User/Admin | Delete own intake |
+
+### Admin
+
+| Method | Endpoint | Auth | Description |
+|---|---|---|---|
+| GET | `/api/users` | Admin | List all users |
+| GET | `/api/users/:id` | Admin | Get user details |
+| GET | `/api/users/:id/intake` | Admin | Get user's intake history |
+| PUT | `/api/users/:id/goal` | Admin | Update user's daily goal |
+| DELETE | `/api/users/:id` | Admin | Delete user |

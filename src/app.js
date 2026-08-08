@@ -8,8 +8,7 @@ import authRoutes from "./routes/authRoutes.js"
 import intakeRoutes from "./routes/intakeRoutes.js"
 import userRoutes from "./routes/userRoutes.js"
 
-import protect from "./middleware/authMiddleware.js"
-import authorizeRoles from "./middleware/roleMiddleware.js"
+
 
 
 dotenv.config()
@@ -31,13 +30,7 @@ app.get("/api/health",(req,res)=>{
     })
 })
 
-app.get("/api/admin/test",protect,authorizeRoles("admin"),(req,res)=>{
-    res.status(200).json({
-        success:true,
-        message:"Admin route accessed successfully",
-        user:req.user
-    })
-})
+
 
 app.use("/api/auth",authRoutes)
 app.use("/api/intake",intakeRoutes)
