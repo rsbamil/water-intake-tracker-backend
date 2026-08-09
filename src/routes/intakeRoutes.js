@@ -21,3 +21,5 @@ router.get("/history",getIntakeHistory)
 router.delete("/:id",deleteIntake)
 
 export default router
+
+// eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2YTc2ZjgzYWJiNGMxNzgwZTM5MmJjZDAiLCJyb2xlIjoidXNlciIsImlhdCI6MTc4NjI1NzU5NywiZXhwIjoxNzg2ODYyMzk3fQ.zOjWK2SdTWzcDguDh7p8GA_9SB0kuw3dDUtWgYYiEJo
